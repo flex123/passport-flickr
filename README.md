@@ -3,9 +3,11 @@
 [Passport](https://github.com/jaredhanson/passport) strategy for authenticating
 with Flickr using the OAuth 1.0a API.
 
+[Note] this version add some modification to "johnnyhalife/passport-flickr" to support custom permission
+
 ## Installation
 
-    $ npm install passport-flickr
+    $ npm install git://github.com/julianshen/passport-flickr.git#master
 
 ## Usage
 
@@ -20,6 +22,7 @@ consumer key, consumer secret, and callback URL.
         consumerKey: FLICKR_CONSUMER_KEY,
         consumerSecret: FLICKR_CONSUMER_SECRET,
         callbackURL: "http://127.0.0.1:3000/auth/flickr/callback"
+        permission: "write"
       },
       function(token, tokenSecret, profile, done) {
         User.findOrCreate({ flickrId: profile.id }, function (err, user) {
@@ -27,6 +30,8 @@ consumer key, consumer secret, and callback URL.
         });
       }
     ));
+
+[Note] Default permission is "read"
 
 #### Authenticate Requests
 
