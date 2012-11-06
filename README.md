@@ -21,7 +21,7 @@ consumer key, consumer secret, and callback URL.
     passport.use(new FlickrStrategy({
         consumerKey: FLICKR_CONSUMER_KEY,
         consumerSecret: FLICKR_CONSUMER_SECRET,
-        callbackURL: "http://127.0.0.1:3000/auth/flickr/callback"
+        callbackURL: "http://127.0.0.1:3000/auth/flickr/callback",
         permission: "write"
       },
       function(token, tokenSecret, profile, done) {
